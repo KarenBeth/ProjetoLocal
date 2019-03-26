@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import connection.ConnectionFactory;
+import model.Professor;
 import model.ProfessorBanca;
 
 public class ProfessorBancaDAO {
@@ -78,17 +79,22 @@ public class ProfessorBancaDAO {
 	
 	public ProfessorBanca loadProfessorBanca(int id) {
 		ProfessorBanca professorBanca = new ProfessorBanca();
+		BancaDAO bancaDAO = new BancaDAO();
+		ProfessorDAO professorDAO = new ProfessorDAO();
+		Professor professor = null;
 		
 		Connection conn = new ConnectionFactory().getConnection();
-		String sqlInsert = "SELECT avaliacao FROM ProfessorBanca WHERE ProfessorBanca.id =?";
+		String sqlInsert = "SELECT avaliacao, professor, banca FROM ProfessorBanca WHERE ProfessorBanca.id =?";
 		
 		try(PreparedStatement stm = conn.prepareStatement(sqlInsert)){
 			
-			stm.setInt(1, professorBanca.getId());
+			stm.setInt(1, id);
 			ResultSet rs = stm.executeQuery();
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				professorBanca.setAvaliacao(rs.getDouble("Avaliacao"));
+				//professorBanca.setProfessor(professorDAO.load(professorBanca.getProfessor().getId());
+				professorBanca.setBanca(bancaDAO.loadBanca(professorBanca.getBanca().getId()));
 			}
 			
 		}catch(SQLException e) {

@@ -70,12 +70,12 @@ public class UsuarioDAO {
      * CRUD: Deleta usuário
      * @param conn: Connection
      */
-	public void deleteUsuario(Usuario usuario) {
+	public void deleteUsuario(int id) {
 		Connection conn = new ConnectionFactory().getConnection();
 		
 		String sqlComand = "DELETE FROM Usuario WHERE Id = ?";
 		try(PreparedStatement stm = conn.prepareStatement(sqlComand, Statement.RETURN_GENERATED_KEYS)){
-			stm.setInt(1, usuario.getId());
+			stm.setInt(1, id);
 			stm.executeUpdate();
 		}catch (SQLException e) {
 			e.printStackTrace();

@@ -10,13 +10,13 @@ public class ProfessorBanca {
 	
 	private int id;
 	private double    avaliacao;
-	private Professor professor;
+	private ArrayList<Professor> professor;
 	private Banca     banca;
 	
 	public ProfessorBanca() {
 	}
 	
-	public ProfessorBanca(int id, double avaliacao, Professor professor, Banca banca) {
+	public ProfessorBanca(int id, double avaliacao, ArrayList<Professor> professor, Banca banca) {
 		this.id = id;
 		this.avaliacao = avaliacao;
 		this.professor = professor;
@@ -39,11 +39,11 @@ public class ProfessorBanca {
 		this.avaliacao = avaliacao;
 	}
 
-	public Professor getProfessor() {
+	public ArrayList<Professor> getProfessor() {
 		return professor;
 	}
 
-	public void setProfessor(Professor professor) {
+	public void setProfessor(ArrayList<Professor> professor) {
 		this.professor = professor;
 	}
 

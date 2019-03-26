@@ -14,9 +14,10 @@ public class Banca {
 	private ArrayList<ProfessorBanca> lstProfessorBanca;
 	
 	public Banca() {
+		// TODO Auto-generated constructor stub
 	}
 	
-	public Banca(int numero, String nome ,int id, Date data, String sala) {
+	public Banca(String grupoId, int numero, String nome ,int id, Date data, String sala) {
 		this.id = id;
 		this.data = data;
 		this.sala = sala;

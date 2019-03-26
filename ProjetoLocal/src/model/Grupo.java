@@ -8,36 +8,24 @@ import java.util.ArrayList;
 */
 public class Grupo {
 	
-	private int id;
 	private int numero;
 	private String nome;
-	private Professor orientador;
+	private Professor professor;
 	private ArrayList<Aluno> lstAlunos;
 	
-	public Grupo() {
-	}
-	
-	public Grupo(int numero, String nome, Professor orientador, ArrayList<Aluno> lstAlunos) {
-		this.orientador = orientador;
+	public Grupo(int numero, String nome, Professor professor, ArrayList<Aluno> lstAlunos) {
+		this.professor = professor;
 		this.numero = numero;
 		this.nome = nome;
 		this.lstAlunos = lstAlunos;
 	}
 	
-	public int getId() {
-		return id;
+	public Professor getProfessor() {
+		return professor;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public Professor getOrientador() {
-		return orientador;
-	}
-	
-	public void setOrientador(Professor orientador) {
-		this.orientador = orientador;
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 	
 	public int getNumero() {

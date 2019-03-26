@@ -1,32 +1,29 @@
 package service;
 
-import java.io.Serializable;
-
-import model.Professor;
 import dao.ProfessorDAO;
+import model.Professor;
 
-public class ProfessorService implements Serializable{
-	
+public class ProfessorService {
+
 	ProfessorDAO dao;
 	
 	public ProfessorService() {
 		dao = new ProfessorDAO();
 	}
 	
-	public void createProfessor(Professor professor) {
+	public void create(Professor professor) {
 		dao.create(professor);
 	}
 	
-	public void updateProfessor(Professor professor) {
+	public void update(Professor professor) {
 		dao.update(professor);
 	}
-
-	public void deleteProfessor(Professor professor) {
-		dao.delete(professor);
+	
+	public void delete(int id) {
+		dao.delete(id);
 	}
 	
-	public Professor loadProfessor(Professor professor) {
-		return dao.load(professor);
+	public Professor load(int id) {
+		return dao.load(id);
 	}
-	
 }

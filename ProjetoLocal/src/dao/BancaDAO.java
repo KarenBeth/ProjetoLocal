@@ -93,7 +93,7 @@ public class BancaDAO {
 		
 		try(PreparedStatement stm = conn.prepareStatement(sqlInsert)){
 			
-			stm.setInt(1, banca.getId());
+			stm.setInt(1, id);
 			ResultSet rs = stm.executeQuery();
 			
 			if(rs.next()) {

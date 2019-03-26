@@ -47,18 +47,17 @@ public class Aluno extends Usuario {
 	
 	public void load() {
 		AlunoDAO dao = new AlunoDAO();
-		dao.load(this);
+		dao.load(this.getId());
 	}
 	
 	public void update() {
 		AlunoDAO dao = new AlunoDAO();		
 		dao.update(this);
 	}
-	
-	
+
 	public void delete() {
 		AlunoDAO dao = new AlunoDAO();		
-		dao.delete(this);
+		dao.delete(this.getId());
 	}	
 	
 	@Override

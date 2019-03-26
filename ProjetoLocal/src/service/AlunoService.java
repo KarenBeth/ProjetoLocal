@@ -21,11 +21,11 @@ public class AlunoService implements Serializable{
 		dao.update(aluno);
 	}
 	
-	public void delete(Aluno aluno) {
-		dao.delete(aluno);
+	public void delete(int id) {
+		dao.delete(id);
 	}
 	
-	public Aluno load(Aluno aluno) {
-		return dao.load(aluno);
+	public Aluno load(int id) {
+		return dao.load(id);
 	}
 }
