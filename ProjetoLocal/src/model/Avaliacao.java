@@ -8,11 +8,15 @@ import java.util.Date;
 */
 public class Avaliacao {
 	
-	private int nota;
+	private double nota;
 	private Entrega entrega;
 	private Grupo grupo;
 	private Date dataAvaliacao;
 	private String comentarios;
+	
+	public Avaliacao() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Avaliacao(Entrega entrega, Grupo grupo, int nota, Date dataAvaliacao, String comentarios) {
 		this.entrega = entrega;
@@ -38,11 +42,11 @@ public class Avaliacao {
 		this.grupo = grupo;
 	}
 	
-	public int getNota() {
+	public double getNota() {
 		return nota;
 	}
 	
-	public void setNota(int nota) {
+	public void setNota(double nota) {
 		this.nota = nota;
 	}
 	
