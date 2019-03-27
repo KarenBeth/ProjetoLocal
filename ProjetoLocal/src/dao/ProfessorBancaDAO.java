@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import connection.ConnectionFactory;
 import model.Professor;
@@ -81,22 +82,21 @@ public class ProfessorBancaDAO {
 		ProfessorBanca professorBanca = new ProfessorBanca();
 		BancaDAO bancaDAO = new BancaDAO();
 		ProfessorDAO professorDAO = new ProfessorDAO();
-		Professor professor = null;
-		
+
 		Connection conn = new ConnectionFactory().getConnection();
-		String sqlInsert = "SELECT avaliacao, professor, banca FROM ProfessorBanca WHERE ProfessorBanca.id =?";
-		
+		String sqlInsert = "SELECT avaliacao FROM ProfessorBanca WHERE ProfessorBanca.id =?";
+
 		try(PreparedStatement stm = conn.prepareStatement(sqlInsert)){
-			
-			stm.setInt(1, id);
+
+			stm.setInt(1, professorBanca.getId());
 			ResultSet rs = stm.executeQuery();
-			
-			while(rs.next()) {
+
+			if(rs.next()) {
 				professorBanca.setAvaliacao(rs.getDouble("Avaliacao"));
-				//professorBanca.setProfessor(professorDAO.load(professorBanca.getProfessor().getId());
 				professorBanca.setBanca(bancaDAO.loadBanca(professorBanca.getBanca().getId()));
+				professorBanca.setProfessor(professorDAO.load(professorBanca.getProfessor().getId()));
 			}
-			
+
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
