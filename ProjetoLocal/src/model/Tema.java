@@ -16,6 +16,17 @@ public class Tema {
 	private Date dataCadastro;
 	private ArrayList<Turma> lstTurmas;
 	
+	public Tema() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Tema(String titulo, String introducao, String requisitos, Date dataCadastro) {
+		this.titulo = titulo;
+		this.introducao = introducao;
+		this.requisitos = requisitos;
+		this.dataCadastro = dataCadastro;
+	}
+	
 	public void tema(String titulo) {
 		this.titulo = titulo;
 	}
