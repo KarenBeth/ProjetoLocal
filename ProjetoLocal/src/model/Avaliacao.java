@@ -8,6 +8,7 @@ import java.util.Date;
 */
 public class Avaliacao {
 	
+	private int id;
 	private double nota;
 	private Entrega entrega;
 	private Grupo grupo;
@@ -24,6 +25,14 @@ public class Avaliacao {
 		this.nota = nota;
 		this.dataAvaliacao = dataAvaliacao;
 		this.comentarios = comentarios;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public Entrega getEntrega() {
