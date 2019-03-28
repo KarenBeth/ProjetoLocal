@@ -12,6 +12,10 @@ public class Entrega {
 	private Grupo grupo;
 	private Atividade atividade;
 	private Date dataCadastro;
+	
+	public Entrega() {
+		// TODO Auto-generated constructor stub
+	}
 		
 	public Entrega(Grupo grupo, Atividade atividade, int id, Date dtCadastro) {
 		this.id = id;
